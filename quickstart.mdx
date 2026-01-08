@@ -1,80 +1,197 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "Quick Start Guide"
+description: "Get from signup to your first insights in 15 minutes"
 ---
 
-## Get started in three steps
+Get from signup to your first insights in 15 minutes. No code required.
 
-Get your documentation site running locally and make your first customization.
+## What You'll Learn
 
-### Step 1: Set up your local environment
+By the end of this guide, you'll:
+1. Create your first project
+2. Add test scenarios
+3. Generate AI outputs
+4. Rate outputs
+5. Extract patterns and get actionable insights
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+## Prerequisites
 
-### Step 2: Deploy your changes
+<Card title="Sign up for Sageloop" icon="user-plus" href="https://workbench.sageloop.app">
+  Create your free account - no credit card required
+</Card>
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+That's it! Sageloop provides all the AI infrastructure. Just sign up and start evaluating.
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+## Step 1: Create Your Project (2 min)
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+After logging in, you'll see an empty dashboard.
 
-### Step 3: Go live
+1. Click **"New Project"**
+2. Enter a project name: "My First Eval"
+3. Write a system prompt (example below)
+4. Click **"Create Project"**
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+### Example System Prompt
 
-## Next steps
+Pick something simple for your first project:
 
-Now that you have your docs running, explore these key features:
+```
+You are a helpful customer support agent. Answer customer questions clearly and professionally. Always be empathetic.
+```
+
+<Tip>
+  Don't worry about perfection—you'll refine this later based on patterns you discover.
+</Tip>
+
+## Step 2: Add Test Scenarios (3 min)
+
+Now you need user inputs to test. Scenarios are the questions or requests your AI will receive.
+
+1. Click **"Add Scenarios"**
+2. Click **"Bulk Add"** and paste these 15 examples (or use your own):
+
+```
+Where is my refund?
+I want a refund for order #12345
+How long does a refund take?
+Can I get a partial refund?
+My refund hasn't arrived yet
+Where is my order?
+When will my package arrive?
+Can I change my shipping address?
+Item arrived damaged, what do I do?
+How do I return an item?
+Can I return after 30 days?
+How do I reset my password?
+I can't log in
+Cancel my subscription
+Delete my account
+```
+
+3. Click **"Add All"**
+
+<Tip>
+  Use real questions from your support queue, documentation, or actual customer interactions. Real data makes patterns more valuable.
+</Tip>
+
+## Step 3: Generate Outputs (2 min)
+
+Now let Sageloop call AI models for each scenario.
+
+1. Click **"Generate Outputs"**
+2. Wait 30-60 seconds
+3. You'll see all outputs in a table view
+
+**This is Sageloop's superpower**: See all 15 AI responses at once. Compare them visually and spot patterns instantly.
+
+## Step 4: Rate Outputs (5 min)
+
+Rate each output based on what you want in production. Use the 5-star scale:
+
+- **5 stars**: Perfect. Deploy as-is.
+- **4 stars**: Good, minor issues
+- **3 stars**: Okay, but needs improvement
+- **2 stars**: Problems. Major issues.
+- **1 star**: Unacceptable. Never ship this.
+
+### Rating Tips
+
+- **Trust your gut**. If it feels wrong, it's 1-2 stars.
+- **For 1-2 star outputs**, click **"Add Feedback"** and explain why (e.g., "Too formal", "Missing refund timeline")
+- **Use keyboard shortcuts**: Press `1-5` to rate, then `↓` to move to next output
+
+<Tip>
+  You can rate all 15 outputs in under 5 minutes using keyboard shortcuts. Press `1-5` to rate, then `Tab` to advance.
+</Tip>
+
+## Step 5: Extract Patterns (2 min)
+
+This is where Sageloop gets smart.
+
+1. Go to the **"Insights"** tab
+2. Click **"Run Pattern Extraction"**
+3. Wait 5-10 seconds
+4. You'll see failure clusters and quality patterns
+
+### What You'll See
+
+**Failure Analysis**:
+<Note>
+Cluster 1: Vague Timelines (3 outputs)
+Pattern: All 1-2 star outputs use "soon" instead of specific "5-7 business days"
+Fix: Add to system prompt: "Always say exactly '5-7 business days' for refund timeline"
+</Note>
+
+**Quality Patterns** (5-star outputs):
+<Check>
+All 5-star outputs:
+- Start with an apology
+- Use specific timeline ("5-7 business days")
+- Include next steps
+- End with friendly closing
+</Check>
+
+## Step 6: Apply Fixes (Optional, 3 min)
+
+See improvement opportunity? Let's test a fix.
+
+1. Click **"Apply Suggested Fix"** on a failure cluster
+2. Review the updated system prompt
+3. Click **"Update & Retest"**
+4. Only the failed scenarios regenerate (saves time)
+5. Rate the new outputs
+6. Check if quality improved
+
+<Tip>
+  If 3 outputs failed for "missing timeline," after applying the fix, you might see "2/3 now pass ✅"
+</Tip>
+
+## You're Done!
+
+Congratulations! You've completed your first evaluation loop:
+
+<Steps>
+  <Step title="Created a project" />
+  <Step title="Added scenarios" />
+  <Step title="Generated outputs" />
+  <Step title="Rated outputs" />
+  <Step title="Extracted patterns" />
+  <Step title="Applied a fix and retested" />
+</Steps>
+
+## What's Next?
+
+Now that you've seen how Sageloop works, explore deeper:
 
 <CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
+  <Card title="Core Concepts" icon="lightbulb" href="/core-concepts">
+    Understand the methodology
+  </Card>
+  <Card title="Rating Guide" icon="star" href="/guide/rating-outputs">
+    Advanced rating techniques
+  </Card>
+  <Card title="Pattern Extraction" icon="sparkles" href="/guide/pattern-extraction">
+    How extraction works
+  </Card>
+  <Card title="Use Cases" icon="book-open" href="/use-cases/customer-support">
+    See how others use Sageloop
+  </Card>
 </CardGroup>
 
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+## Common Questions
+
+**Can I invite teammates?**
+Yes! Use the Share button in project settings. They can rate the same outputs independently.
+
+**How do I improve my system prompt?**
+The insights show you exact patterns to fix. Copy suggested fixes into your prompt.
+
+**When should I extract patterns?**
+After you've rated 15-30 outputs for reliable patterns. Sageloop will warn you if sample is too small.
+
+**Can I use this for production AI?**
+Absolutely. Export your insights as a test suite for CI/CD integration.
+
+<Card title="Learn Core Concepts" icon="arrow-right" href="/core-concepts">
+  Understand the methodology behind Sageloop
+</Card>
